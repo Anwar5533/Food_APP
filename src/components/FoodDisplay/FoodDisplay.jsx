@@ -9,7 +9,7 @@ export default function FoodDisplay({ category }) {
       <h2 className="text-[40px] mb-[10px] text-base md:text-[2vw]">
         Top dishes near you{" "}
       </h2>
-      <div className="grid grid-cols-4 gap-4 mt-[30px]">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mt-[30px]">
         {food_list.map((item, index) => {
           return (
             <FoodItem
