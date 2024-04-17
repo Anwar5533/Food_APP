@@ -19,6 +19,7 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      
       fontFamily: {
         custom: ["Outfit"],
       },
