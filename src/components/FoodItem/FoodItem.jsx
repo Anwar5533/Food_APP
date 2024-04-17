@@ -1,33 +1,37 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { assets } from "../../assets/assets";
+import { StoreContext } from "../../Context/StoreContext";
 
 export default function FoodItem({ id, name, price, description, image }) {
-  const [itemCount, setItemCount] = useState(0);
+  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+
+  const itemCount = cartItems[id] || 0;
+
   return (
     <div className="w-100% delay-0.3s mb-16 animate-fadeIn rounded-lg shadow-md shadow-slate-200 transition hover:shadow-slate-500 ">
-      <div>
+      <div className="relative">
         <img src={image} alt="" className="w-100% rounded-t-xl" />
         {!itemCount ? (
           <img
-            onClick={() => setItemCount((prev) => prev + 1)}
+            onClick={() => addToCart(id)}
             src={assets.add_icon_white}
             alt=""
-            className="cursor-pointer"
+            className="absolute bottom-[15px] right-[15px] w-[35px] cursor-pointer rounded-[50%]"
           />
         ) : (
-          <div className="">
+          <div className=" absolute bottom-[15px] right-[15px] flex items-center gap-[10px] rounded-[50px] bg-white p-[6px]">
             <img
-              onClick={() => setItemCount((prev) => prev - 1)}
+              onClick={() => removeFromCart(id)}
               src={assets.remove_icon_red}
               alt=""
-              className="cursor-pointer"
+              className="w-[30px] cursor-pointer"
             />
             <p>{itemCount}</p>
             <img
-              onClick={() => setItemCount((prev) => prev + 1)}
+              onClick={() => addToCart(id)}
               src={assets.add_icon_green}
               alt=""
-              className="cursor-pointer"
+              className="w-[30px] cursor-pointer"
             />
           </div>
         )}
