@@ -7,7 +7,7 @@ export default function ExploreMenu({ category, setCategory }) {
       className="flex flex-col gap-5 font-custom"
     >
       <h1 className="text-4xl text-slate-700">Explore our menu</h1>
-      <p className="max-w-3xl text-slate-600">
+      <p className="max-w-3xl text-slate-600 lg:{max-w-[100%] text-[14px]}">
         Choose from a diverse menu featuring a delectable array of dishes. Our
         mission is to satisfy your cravings and elevate your dining experience,
         one delicious meal at a time.

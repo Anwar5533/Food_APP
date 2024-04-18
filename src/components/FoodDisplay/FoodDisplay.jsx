@@ -7,14 +7,13 @@ export default function FoodDisplay({ category }) {
   const { food_list } = useContext(StoreContext);
 
   return (
-
-    <div id="food-display" className="mt-[30px]">
-      <h2 className="mb-[10px] text-[40px] text-base md:text-[2vw]">
-        Top dishes near you
-      </h2>
-      <div className="mt-[30px] grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div id="food-display" className="mt-[30px] ">
+      <h2 className="mb-[10px] text-[max(2vw,24px)]">Top dishes near you</h2>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] mt-[30px] gap-[30px] gap-y-[50px]">
         {food_list.map((item) => {
-          {console.log(category, item.category)}
+          {
+            console.log(category, item.category);
+          }
           if (category === "All" || category === item.category) {
             return (
               <FoodItem
@@ -27,8 +26,7 @@ export default function FoodDisplay({ category }) {
               />
             );
           }
-          
-})}
+        })}
       </div>
     </div>
   );
