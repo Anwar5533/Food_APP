@@ -2,7 +2,7 @@ import { assets } from "../../assets/assets";
 
 export default function AppDownload() {
   return (
-    <div
+    <div id="app-download"
       className="mt-[80px] flex flex-col items-center  md:text-center"
       style={{ fontSize: "max(3vw, 20px)" }}
     >

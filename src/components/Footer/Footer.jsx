@@ -2,8 +2,8 @@ import { assets } from "../../assets/assets";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center gap-[20px] bg-[#323232] px-[8vw] py-[20px] pt-[80px] font-custom text-[#d9d9d9] mt-[100px]">
-      <div className="grid w-[100%] grid-cols-3 gap-[80px] ">
+    <div id="footer" className="mt-[100px] flex flex-col items-center gap-[20px] bg-[#323232] px-[8vw] py-[20px] pt-[80px] font-custom text-[#d9d9d9]">
+      <div className="flex w-[100%] flex-col sm:flex-row sm:gap-[35px] md:flex-row md:gap-[35px]">
         <div className="flex flex-col items-start gap-[20px]">
           <h1 className="text-[40px] font-bold"> COMPANY LOGO</h1>
           <p>
@@ -49,7 +49,9 @@ export default function Footer() {
         </div>
       </div>
       <hr className="bg-brown-600 m-[20px] h-[2px] w-[100%]" />
-      <p>Copyright 2024 CloudFood.Com - All rights reserved.</p>
+      <p className="sm:text-center">
+        Copyright 2024 CloudFood.Com - All rights reserved.
+      </p>
     </div>
   );
 }
