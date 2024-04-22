@@ -3,7 +3,7 @@ import { useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 
-export default function Navbar(options) {
+export default function Navbar({setShowLogin}) {
   return (
     <div className="mt-2 flex items-center justify-between px-4 font-custom lg:px-0 ">
       <div className="flex items-center">
@@ -41,7 +41,7 @@ export default function Navbar(options) {
           />
           <div className="absolute -right-2 -top-2 h-2 w-2 rounded-full bg-orange-600 "></div>
         </div>
-        <button className="lg:{py-[8px] px-[25px]} md:{py-[7px] text-[15px]} border border-slate-400 bg-transparent px-4 px-[20px] py-2 transition duration-300 ease-in-out hover:bg-orange-100 sm:rounded-2xl rounded-2xl">
+        <button onClick={()=>setShowLogin(true)} className="lg:{py-[8px] px-[25px]} md:{py-[7px] text-[15px]} border border-slate-400 bg-transparent px-4 px-[20px] py-2 transition duration-300 ease-in-out hover:bg-green-200 sm:rounded-2xl rounded-2xl">
           Sign-In
         </button>
       </div>

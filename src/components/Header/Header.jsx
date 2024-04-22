@@ -16,7 +16,7 @@ export default function Header() {
           mission is to satisfy your cravings and elevate your dining
           experience, one delicious meal at a time.
         </p>
-        <button className="sm:{py-[2vw] px-[4vw]} rounded-[30px] border-none bg-white px-[2.3vw] py-[1vw] text-[max(1vw,13px)] text-slate-600">
+        <button className="sm:{py-[2vw] px-[4vw]} rounded-[30px] border-none bg-white px-[2.3vw] py-[1vw] text-[max(1vw,13px)] text-slate-600 transition duration-300 ease-in-out hover:bg-green-300">
           View Menu
         </button>
       </div>
