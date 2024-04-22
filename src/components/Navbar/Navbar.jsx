@@ -1,19 +1,23 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
+import { StoreContext } from "../../Context/StoreContext";
 
-export default function Navbar({setShowLogin}) {
+export default function Navbar({ setShowLogin }) {
+  const { getTotalCartAmount } = useContext(StoreContext);
+
   return (
     <div className="mt-2 flex items-center justify-between px-4 font-custom lg:px-0 ">
       <div className="flex items-center">
-        <img
-          src={assets.logo}
-          alt="logo"
-          className="md:{w-[120px]} w-56 lg:w-[140px]"
-        />
+        <Link to="/">
+          <img
+            src={assets.logo}
+            alt="logo"
+            className="w-56 cursor-pointer md:w-[120px] lg:w-[140px]"
+          />
+        </Link>
       </div>
-      <ul className="lg:{gap-20[px] text-[17px]} md:{gap-[15px] text-[16px]} sm:{hidden} hidden gap-4 text-slate-600 lg:flex">
+      <ul className="hidden gap-4 text-slate-600 md:gap-[15px] md:text-[16px] lg:flex lg:gap-20 lg:text-[17px]">
         <Link to="/" className="cursor-pointer hover:underline">
           Home
         </Link>
@@ -27,21 +31,28 @@ export default function Navbar({setShowLogin}) {
           Contact Us
         </a>
       </ul>
-      <div className="lg:{gap-[30px]} flex items-center gap-4 md:gap-[20px]">
+      <div className="flex items-center gap-4 md:gap-[20px] lg:gap-[30px]">
         <img
           src={assets.search_icon}
           alt="search-icon"
-          className="lg:2-[22px] block md:w-[20px] lg:inline-block"
+          className="block md:w-[20px] lg:inline-block lg:w-[22px]"
         />
         <div className="relative">
-          <img
-            src={assets.basket_icon}
-            alt="basket-icon"
-            className="lg:2-[22px] md:w-[20px]"
-          />
-          <div className="absolute -right-2 -top-2 h-2 w-2 rounded-full bg-orange-600 "></div>
+          <Link to="/cart">
+            <img
+              src={assets.basket_icon}
+              alt="basket-icon"
+              className="cursor-pointer md:w-[20px] lg:w-[22px]"
+            />
+          </Link>
+          <div
+            className={`absolute -right-2 -top-2 h-2 w-2 rounded-full bg-orange-600 ${getTotalCartAmount() === 0 ? "hidden" : ""}`}
+          ></div>
         </div>
-        <button onClick={()=>setShowLogin(true)} className="lg:{py-[8px] px-[25px]} md:{py-[7px] text-[15px]} border border-slate-400 bg-transparent px-4 px-[20px] py-2 transition duration-300 ease-in-out hover:bg-green-200 sm:rounded-2xl rounded-2xl">
+        <button
+          onClick={() => setShowLogin(true)}
+          className="rounded-2xl border border-slate-400 bg-transparent px-4 px-[20px] py-2 transition duration-300 ease-in-out hover:bg-green-200 sm:rounded-2xl md:py-[7px] md:text-[15px] lg:px-[25px] lg:py-[8px]"
+        >
           Sign-In
         </button>
       </div>

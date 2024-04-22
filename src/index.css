@@ -12,4 +12,12 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-}
+
+    @media (max-width: 750px){
+      #cart{
+        flex-direction: column-reverse;
+      }
+    }
+      
+  }
+
