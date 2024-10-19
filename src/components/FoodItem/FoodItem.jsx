@@ -43,7 +43,7 @@ export default function FoodItem({ id, name, price, description, image }) {
         </div>
         <p className="text-[12px] text-slate-500">{description}</p>
         <p className="my-[10px] text-[22px] font-semibold text-orange-400">
-          ${price}
+          ₹{price}
         </p>
       </div>
     </div>
